@@ -42,9 +42,9 @@
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <a href=""><img class="d-block w-100" src="img/clinic carousel.png" alt="First slide"></a>
+            <a href="clinic.php"><img class="d-block w-100" src="img/clinic carousel.png" alt="First slide"></a>
             <div class="carousel-caption d-none d-md-block">
-                <a href="" class="link"><h1>Clinic & Grooming</h1></a>
+                <a href="" class="link"><h1>Clinic</h1></a>
                 <a><p>...</p></a>
             </div>
           </div>
