@@ -1,0 +1,68 @@
+.nav-item{
+    margin: 35px !important;
+}
+.nav-link:hover{
+    color: #C5DCA0 !important;
+    
+}
+.navbar{
+    vertical-align: middle !important;
+    margin-bottom: 100px;
+}
+.btnregister {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    padding: 12px 24px;
+    border: 3px solid #a8b188;
+    border-radius: 8px;
+    background: none;
+    font: normal normal bold 18px georgia;
+    color: #b5cc91;
+    text-decoration: none;
+}
+
+/*--------------Main-----------------------*/
+
+.main_div{
+    margin-top: 100px !important;
+}
+.card{
+    background-color: #a491d36b;
+    border: none;
+    border-radius: 20px;
+}
+.btn_adopt{
+    margin-top: 50px;
+    margin-bottom: 20px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 100px;
+    background: #A491D3;
+    font: normal normal bold 20px georgia;
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
+}
+.btn_adopt:hover{
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    padding: 9.5px 24px;
+    border: 3px solid #A491D3;
+    border-radius: 100px;
+    background: none;
+    font: normal normal bold 18px georgia;
+    color: #A491D3;
+    text-decoration: none;
+}
+.card p{
+    font-weight: bolder;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.card{
+    margin: 30px;
+}

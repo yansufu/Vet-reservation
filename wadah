@@ -1,0 +1,30 @@
+if($_FILES["img"]["error"] == 4){
+            echo
+            "Image Does Not Exist"
+            ;
+          }
+          else{
+            $fileName = $_FILES["img"]["name"];
+            $fileSize = $_FILES["img"]["size"];
+            $tmpName = $_FILES["img"]["tmp_name"];
+        
+            $validImageExtension = ['jpg', 'jpeg', 'png'];
+            $imageExtension = explode('.', $fileName);
+            $imageExtension = strtolower(end($imageExtension));
+            if ( !in_array($imageExtension, $validImageExtension) ){
+              echo
+              "
+              Invalid Image Extension
+              ";
+            }
+            else if($fileSize > 1000000){
+              echo
+              "
+              Image Size Is Too Large
+              ";
+            }
+            else{
+              $newImageName = uniqid();
+              $newImageName .= '.' . $imageExtension;
+        
+              move_uploaded_file($tmpName, 'img/' . $newImageName);

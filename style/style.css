@@ -1,0 +1,85 @@
+
+.nav-item{
+    margin: 35px !important;
+}
+.nav-link:hover{
+    color: #C5DCA0 !important;
+    
+}
+.navbar{
+    vertical-align: middle !important;
+}
+.btnregister {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    padding: 12px 24px;
+    border: 3px solid #a8b188;
+    border-radius: 8px;
+    background: none;
+    font: normal normal bold 18px georgia;
+    color: #b5cc91;
+    text-decoration: none;
+}
+
+/*Body*/
+
+.body{
+    margin-top: 100px !important;
+    margin-left: 150px !important;
+    display: grid;
+    width: 40% !important;
+}
+.body h1{
+    color: #52596c;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 60px;
+    font-weight: bolder;
+    margin-bottom: 50px !important;
+}
+.body p{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: larger;
+}
+.body button{
+    margin-top: 50px;
+    margin-bottom: 100px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 100px;
+    background: #C5DCA0;
+    font: normal normal bold 20px georgia;
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
+}
+.body button:hover{
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    padding: 9.5px 28px;
+    border: 3px solid #a8b188;
+    border-radius: 100px;
+    background: none;
+    font: normal normal bold 18px georgia;
+    color: #b5cc91;
+    text-decoration: none;
+}
+.letter{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    justify-content: center;
+    font-weight: bolder;
+}
+.body h5{
+    font-size: 60px;
+    margin-right: 100px;
+    font-weight: bolder;
+    color: #52596c;
+    font-family: Times New Roman;
+    border: #52596c;
+}
+
+
