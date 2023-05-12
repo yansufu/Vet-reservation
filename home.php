@@ -55,13 +55,6 @@
                 <a><p>...</p></a>
             </div>
           </div>
-          <div class="carousel-item">
-            <a></a><img class="d-block w-100" src="img/Pet hotel carousel.png" alt="Third slide">
-            <div class="carousel-caption d-none d-md-block">
-                <a></a><h1>Pet Hotel</h1>
-                <a><p>...</p></a>
-            </div>
-          </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
