@@ -49,7 +49,7 @@
             </div>
           </div>
           <div class="carousel-item">
-            <a href="adoption.html"><img class="d-block w-100" src="img/Adoption carousel.png" alt="Second slide"></a>
+            <a href="adoption.php"><img class="d-block w-100" src="img/Adoption carousel.png" alt="Second slide"></a>
             <div class="carousel-caption d-none d-md-block">
                 <a href="adoption.php"><h1>Adoption</h1></a>
                 <a><p>...</p></a>

@@ -66,3 +66,15 @@
 .card{
     margin: 30px;
 }
+
+.flex-row-container {
+    
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.d-flex > .flex-row-item {
+    flex: 1 1 33.333333% !important; /*grow | shrink | basis */
+    
+}

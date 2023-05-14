@@ -44,7 +44,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form method="post" action="adoption.php">
+        <form method="post" action="adoption.php"  enctype="multipart/form-data">
           <div class="form-group">
             <label for="pet_name" class="col-form-label">Name :</label>
             <input type="text" class="form-control" name="name">
@@ -66,8 +66,8 @@
             <textarea class="form-control" name="disease"></textarea>
           </div>
           <div class="form-group">
-            <label for="img" class="col-form-label">Photo :</label>
-            <input type="file" name="img" accept=".jpg, .jpeg, .png" >
+            <label for="my_image" class="col-form-label">Photo :</label>
+            <input type="file" name="my_image" accept=".jpg, .jpeg, .png" >
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -75,6 +75,7 @@
           </div>
         </form>
         <?php
+        include_once ("config.php");
         
         if(isset($_POST['submit'])){
             $pet_name        = $_POST['name'];
@@ -82,10 +83,18 @@
             $pet_age       = $_POST['age'];
             $pet_birth       = $_POST['birth'];
             $pet_disease       = $_POST['disease'];
-            $pet_img       = $_POST['img'];
+            $img_name = $_FILES["my_image"]['name'];
+            $tmp_name = $_FILES["my_image"]['tmp_name'];
+
+            $img_ex = pathinfo($img_name, PATHINFO_EXTENSION);
+            $img_ex_lc = strtolower($img_ex);
+
+            $new_img_name = uniqid("IMG-", true).'.'.$img_ex_lc;
+            $img_upload_path = 'img/'.$new_img_name;
+            move_uploaded_file($tmp_name, $img_upload_path);
           
-              include_once ("config.php");
-              $query = mysqli_query($conn, "INSERT INTO adopt_catalog (name, type, age, birth, disease, img) VALUES('$pet_name', '$pet_type', '$pet_age', '$pet_birth', '$pet_disease', '$pet_img')");
+              
+              $query = mysqli_query($conn, "INSERT INTO adopt_catalog (name, type, age, birth, disease, img) VALUES('$pet_name', '$pet_type', '$pet_age', '$pet_birth', '$pet_disease', '$new_img_name')");
               
               echo
               "
@@ -119,10 +128,10 @@
                         if ($q2->num_rows > 0){
                             while($row = mysqli_fetch_assoc($q2)){
                         ?>
-      <div class="d-flex justify-content-center">
+      <div class="d-flex justify-content-center" style="">
           <div class="side_div">          
               <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="..." alt="Card image cap">
+                <img class="card-img-top" src="img/<?php echo $row['img'];?>" alt="Card image cap">
                 <div class="card-body">
                   <h5 class="card-title"><?php echo $row['name'];?></h5>
                   <p class="card-text">Age : <?php echo $row['age'];?></</p>
@@ -136,8 +145,12 @@
         }}
         ?>
         
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script>
+    if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+    }
+</script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>

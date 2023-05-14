@@ -13,8 +13,9 @@
 
 <!------------------------NAVBAR------------------->
     <div class="navbar d-flex justify-content-center">
-        <div class="mr-auto p-2" style="margin-left: 10%;">
-            <a href="index.php"><img src="img/logo.png" ></a>
+ 
+        <div class="mr-auto p-2" >
+            <a href="index.php"><img src="img/logo.png" style="margin-left:10%;"></a>
         </div>
         <ul class="nav">
             <li class="nav-item">
@@ -30,6 +31,19 @@
             <a class="nav-link" href="#">Contact us</a>
             </li>
         </ul>
+        <div class="mr-auto p-2" style="margin: 0px !important;">
+            <div class="dropdown show">
+                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </a>
+
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+        </div>
+        </div>
         <div class="ml-auto p-2" style="margin-right: 10%;">
             <a href=""><button class="btnregister">Register</button></a>
         </div>

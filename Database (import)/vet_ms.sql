@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 12, 2023 at 03:24 PM
+-- Generation Time: May 12, 2023 at 05:22 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -50,6 +50,42 @@ INSERT INTO `adopt_catalog` (`ID`, `name`, `type`, `age`, `birth`, `disease`, `i
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `clinic`
+--
+
+CREATE TABLE `clinic` (
+  `owner` varchar(100) NOT NULL,
+  `pet_name` varchar(100) NOT NULL,
+  `type` varchar(50) NOT NULL,
+  `description` varchar(200) NOT NULL,
+  `date` date NOT NULL,
+  `time` time NOT NULL,
+  `phone` int(20) NOT NULL,
+  `visit` tinyint(1) NOT NULL,
+  `ID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `clinic`
+--
+
+INSERT INTO `clinic` (`owner`, `pet_name`, `type`, `description`, `date`, `time`, `phone`, `visit`, `ID`) VALUES
+('Yansaf', 'Chiko', 'cat', 'he lose a leg', '2023-05-15', '14:30:00', 2147483647, 0, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `doctor`
+--
+
+CREATE TABLE `doctor` (
+  `ID` int(11) NOT NULL,
+  `name` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -79,6 +115,12 @@ ALTER TABLE `adopt_catalog`
   ADD PRIMARY KEY (`ID`);
 
 --
+-- Indexes for table `clinic`
+--
+ALTER TABLE `clinic`
+  ADD PRIMARY KEY (`ID`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -93,6 +135,12 @@ ALTER TABLE `users`
 --
 ALTER TABLE `adopt_catalog`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+
+--
+-- AUTO_INCREMENT for table `clinic`
+--
+ALTER TABLE `clinic`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `users`
