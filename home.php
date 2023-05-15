@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="style/style_home.css">
 </head>
 <body>
+
     <!-----------------Navbar-------------------->
     <div class="navbar d-flex justify-content-center">
         <div class="mr-auto p-2" style="margin-left: 10%;">
@@ -32,6 +33,7 @@
             <a href=""><button class="btnregister">Register</button></a>
         </div>
     </div>
+
 
     <!------------Carousel-------------------------->
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">

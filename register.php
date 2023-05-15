@@ -31,6 +31,7 @@
   	<div class="input-group">
   	  <button type="submit" class="btn" name="reg_user">Register</button>
   	</div>
+	  <input type="hidden" value="<?php echo $row["ID"];?>">
   	<p>
   		Already a member? <a href="login.php">Sign in</a>
   	</p>

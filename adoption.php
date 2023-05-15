@@ -131,14 +131,17 @@
       <div class="d-flex justify-content-center" style="">
           <div class="side_div">          
               <div class="card" style="width: 18rem;">
+              <form action="adopt_form.php" method="post">
                 <img class="card-img-top" src="img/<?php echo $row['img'];?>" alt="Card image cap">
                 <div class="card-body">
                   <h5 class="card-title"><?php echo $row['name'];?></h5>
                   <p class="card-text">Age : <?php echo $row['age'];?></</p>
                   <p class="card-text">Birthday : <?php echo $row['birth'];?></</p>
                   <p class="card-text">Disease history : <?php echo $row['disease'];?></</p>
-                  <a href="#" class="btn_adopt">ADOPT!</a>
+                  <button style="color;white;" type="submit" name="submit" class="btn_adopt">ADOPT!</button>
+                  <input type="hidden" value="<?php echo $row['ID'];?>" name="id">
                 </div>
+              </form>
               </div>
           </div>
         <?php

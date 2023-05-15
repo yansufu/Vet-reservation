@@ -24,6 +24,7 @@
   	<?php endforeach ?>
   </div>
 <?php  endif ?>
+<form action="index.php" method="post">
   	<div class="input-group">
   		<label>Username</label>
   		<input type="text" name="username" >
@@ -32,6 +33,7 @@
   		<label>Password</label>
   		<input type="password" name="password">
   	</div>
+	<input type="hidden" name="id" value="<?php echo $row['ID'];?>">
   	<div class="input-group">
   		<button type="submit" class="btn" name="login_user">Login</button>
   	</div>

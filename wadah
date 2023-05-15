@@ -28,3 +28,63 @@ if($_FILES["img"]["error"] == 4){
               $newImageName .= '.' . $imageExtension;
         
               move_uploaded_file($tmpName, 'img/' . $newImageName);
+
+
+
+
+
+              <div id="accordion">
+              <div class="card" style="background-color: transparent !important;">
+                <div class="card-header" id="headingOne" style="background-color: transparent !important; border-bottom:none;">
+                  <h5 class="mb-0">
+                  <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Service
+                  </button> 
+                  </h5>
+                </div>
+
+                <div class="collapse" id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div id="accordion">
+                  <div class="card">
+                    <div class="card-header" id="headingOne">
+                      <h5 class="mb-0">
+                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                          See past transaction
+                        </button>
+                      </h5>
+                    </div>
+
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                      <div class="card-body">
+                        <a href="clinic_transc">Clinic transaction</a>
+                      </div>
+                    </div>
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                      <div class="card-body">
+                        <a href="adopt_transc">Adoption transaction</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                      <div class="card-body">
+                        <a href="user.php">See past users</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                      <div class="card-body">
+                        <a>Send feedback</a>
+                      </div>
+                    </div>
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                      <div class="card-body">
+                        <a>Donate us</a>
+                      </div>
+                    </div>
+                </div>
+                </div>
+                
+              </div>
+              
+             
+            </div>

@@ -40,10 +40,13 @@
 
 <!--Body-->
 <div class="body">
+    
     <div class="content">
         <h1>TREATING YOUR PET BY OUR PROFESSIONAL</h1>
         <p>A near best friend for your pet care solution. Our vet and staff are here with love and care to bring your per health and happiness! Free visit and consultation for our member. 50% discount for President University student!</p>
-        <a href="home.php"><button>Create Schedule</button></a>
+        <form action="home.php" method="post">
+        <button type="submit" name="submit" value="<?php $id; ?>">Create Schedule</button>
+        </form>
     </div>
     <div class="d-flex flex-row">
         <div class="num p-2">
