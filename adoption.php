@@ -10,11 +10,11 @@
 </head>
 <body>
     <!---------------------Nav----------------------------------->
-    <div class="navbar d-flex justify-content-center">
+    <div class="navbar d-flex justify-content-center align-middle">
         <div class="mr-auto p-2" style="margin-left: 10%;">
             <a href="index.php"><img src="img/logo.png" ></a>
         </div>
-        <ul class="nav">
+        <ul class="nav align-middle">
             <li class="nav-item">
             <a class="nav-link disabled" href="home.php">Home</a>
             </li>
@@ -22,12 +22,25 @@
             <a class="nav-link disabled" href="#">About us</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link disabled" href="#">Services</a>
+            <div class="dropdown">
+            <button class="nav-link dropdown-toggle" style="background-color:transparent; border:none !important;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Service
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="clinic_history.php">Clinic reservation history</a>
+              <a class="dropdown-item" href="adopt_history.php">Adoption history</a>
+              <a class="dropdown-item" href="user.php">See user</a>
+            </div>
+          </div>
             </li>
             <li class="nav-item">
             <a class="nav-link disabled" href="#">Contact us</a>
             </li>
         </ul>
+        <div class="ml-auto p-2" style="margin-right: 10%;">
+            <a href="login.php"><button class="btnregister">Register</button></a>
+        </div>
+    </div>
 
 <!-----------------------------FORM----------------------------->
         <div class="ml-auto p-2" style="margin-right: 10%;">

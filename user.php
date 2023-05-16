@@ -38,59 +38,45 @@
             </li>
         </ul>
         <div class="ml-auto p-2" style="margin-right: 10%;">
-            <a href="login.php"><button class="btnregister">Register</button></a>
+            <a href=""><button class="btnregister">Register</button></a>
         </div>
     </div>
         <!---------------BODY---------------------->
-        <?php
-        include_once("config.php");
-        $sql2   = "SELECT * FROM adopt_history";
-        $q2     = mysqli_query($conn, $sql2);
-        while ($adopt = mysqli_fetch_array($q2)) {
-            $id         = $adopt['ID'];
-            $owner        = $adopt['owner'];
-            $pet_name       = $adopt['pet_name'];
-            $phone         = $adopt['phone'];
-            $status         = $adopt['status'];
+        <table class="table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th scope="col">ID</th>
+                            <th scope="col">username</th>
+                            <th scope="col">email</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
 
-
-                     
-            
-
-
-    if ($q2->num_rows > 0){
-        // Show Message
-       echo    "<table class='table' border=1>";
-       
-       echo    "<br><br>";
-       echo    "<table class='table' border=1>";
-       echo    "<th class='px-2 thead-dark'>";
-       echo    "<td>Owner</td>";
-       echo    "<td>Phone</td>";
-       echo    "<td>Pet Name</td>";
-       echo    "<td>Status</td>";
-       
-           
-       
-            
-          
-?>
-<tr>
-                                <th scope="row"><?php echo $id ?></th>
-                                <td scope="row"><?php echo $owner ?></td>
-                                <td scope="row"><?php echo $phone ?></td>
-                                <th scope="row"><?php echo $pet_name ?></th>
-                                <td scope="row"><?php echo $status ?></td>
+                        include_once("config.php");
+                        $sql2   = "select * from users";
+                        $q2     = mysqli_query($conn, $sql2);
+                        while ($user = mysqli_fetch_array($q2)) {
+                            $id         = $user['ID'];
+                            $usn        = $user['username'];
+                            $email       = $user['email'];
                         
-                                <?php  ?>
                             
 
-          <td scope="row">
-          <form action="adopt_del.php" method="get"> 
-              <button type="submit" class="btn btn-danger" name="delete">Delete</button> 
-              <input type="hidden" name="id" value="<?php echo $adopt['ID'];?>">
-            </form>
-          <button class="btn btn-warning" type="button" name="edit" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Edit</button>
+                        ?>
+                            <tr>
+                                <th scope="row"><?php echo $id ?></th>
+                                <td scope="row"><?php echo $usn ?></td>
+                                <td scope="row"><?php echo $email ?></td>
+                          
+                                <td scope="row">                                    <form action="user_del.php" method="get"> 
+                                    <button type="submit" class="btn btn-danger" name="delete">Delete</button> 
+                                    <input type="hidden" name="id" value="<?php echo $adopt['ID'];?>">
+                                    </form>
+
+                                    <button class="btn btn-warning" type="button" name="edit" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Edit</button>
             
             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -102,31 +88,29 @@
         </button>
       </div>
       <div class="modal-body">
-        <form method="post" action="adopt_del.php" >
+        <form method="post" action="clinic_del.php" >
           <div class="form-group">
-            <label for="status" class="col-form-label">status :</label>
-            <input type="text" class="form-control" name="status">
+            <label for="usn" class="col-form-label">username :</label>
+            <input type="text" class="form-control" name="usn">
+          </div>
+          <div class="form-group">
+            <label for="email" class="col-form-label">email :</label>
+            <input type="text" class="form-control" name="email">
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             <button type="submit" class="btn btn-primary" name="edit" value="complete">Update</button>
-            <input type="hidden" name="id" value="<?php echo $adopt['ID'];?>">
+            <input type="hidden" name="id" value="<?php echo $user['ID'];?>">
           </div>
         </form>
-              
-              
-           
-            <form action="adopt_del.php" method="get"> 
-              <button type="submit" class="btn btn-danger" name="delete">Delete</button> 
-              <input type="hidden" name="id" value="<?php echo $adopt['ID'];?>">
-            </form>
+                                </td>
+                            </tr>
 
-          </td></tr>
-<?php
-                                
-           } }
-?>
-
+                                </td>
+                            </tr>
+                        <?php
+                        }
+                        ?>
 <script>
     if ( window.history.replaceState ) {
         window.history.replaceState( null, null, window.location.href );

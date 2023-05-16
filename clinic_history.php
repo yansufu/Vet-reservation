@@ -42,55 +42,57 @@
         </div>
     </div>
         <!---------------BODY---------------------->
-        <?php
-        include_once("config.php");
-        $sql2   = "SELECT * FROM adopt_history";
-        $q2     = mysqli_query($conn, $sql2);
-        while ($adopt = mysqli_fetch_array($q2)) {
-            $id         = $adopt['ID'];
-            $owner        = $adopt['owner'];
-            $pet_name       = $adopt['pet_name'];
-            $phone         = $adopt['phone'];
-            $status         = $adopt['status'];
+        <table class="table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th scope="col">Owner</th>
+                            <th scope="col">Pet_name</th>
+                            <th scope="col">Type</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Time</th>
+                            <th scope="col">Phone</th>
+                            <th scope="col">Home Visit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
 
-
-                     
-            
-
-
-    if ($q2->num_rows > 0){
-        // Show Message
-       echo    "<table class='table' border=1>";
-       
-       echo    "<br><br>";
-       echo    "<table class='table' border=1>";
-       echo    "<th class='px-2 thead-dark'>";
-       echo    "<td>Owner</td>";
-       echo    "<td>Phone</td>";
-       echo    "<td>Pet Name</td>";
-       echo    "<td>Status</td>";
-       
-           
-       
-            
-          
-?>
-<tr>
-                                <th scope="row"><?php echo $id ?></th>
-                                <td scope="row"><?php echo $owner ?></td>
-                                <td scope="row"><?php echo $phone ?></td>
-                                <th scope="row"><?php echo $pet_name ?></th>
-                                <td scope="row"><?php echo $status ?></td>
-                        
-                                <?php  ?>
+                        include_once("config.php");
+                        $sql2   = "select * from clinic";
+                        $q2     = mysqli_query($conn, $sql2);
+                        while ($clinic = mysqli_fetch_array($q2)) {
+                            $id         = $clinic['ID'];
+                            $owner        = $clinic['owner'];
+                            $pet_name       = $clinic['pet_name'];
+                            $type         = $clinic['type'];
+                            $desc         = $clinic['description'];
+                            $date         = $clinic['date'];
+                            $time         = $clinic['time'];
+                            $phone         = $clinic['phone'];
+                            $visit         = $clinic['visit'];
                             
 
-          <td scope="row">
-          <form action="adopt_del.php" method="get"> 
-              <button type="submit" class="btn btn-danger" name="delete">Delete</button> 
-              <input type="hidden" name="id" value="<?php echo $adopt['ID'];?>">
-            </form>
-          <button class="btn btn-warning" type="button" name="edit" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Edit</button>
+                        ?>
+                            <tr>
+                                <th scope="row"><?php echo $id ?></th>
+                                <td scope="row"><?php echo $owner ?></td>
+                                <td scope="row"><?php echo $pet_name ?></td>
+                                <th scope="row"><?php echo $type ?></th>
+                                <td scope="row"><?php echo $desc ?></td>
+                                <td scope="row"><?php echo $date ?></td>
+                                <th scope="row"><?php echo $time ?></th>
+                                <td scope="row"><?php echo $phone ?></td>
+                                <td scope="row"><?php echo $visit ?></td>
+                                <td scope="row">
+                                    
+                                    <form action="del_clinic.php" method="get"> 
+                                    <button type="submit" class="btn btn-danger" name="delete">Delete</button> 
+                                    <input type="hidden" name="id" value="<?php echo $clinic['ID'];?>">
+                                    </form>
+
+                                    <button class="btn btn-warning" type="button" name="edit" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Edit</button>
             
             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -102,31 +104,38 @@
         </button>
       </div>
       <div class="modal-body">
-        <form method="post" action="adopt_del.php" >
+        <form method="post" action="clinic_del.php" >
           <div class="form-group">
-            <label for="status" class="col-form-label">status :</label>
-            <input type="text" class="form-control" name="status">
+            <label for="owner" class="col-form-label">owner :</label>
+            <input type="text" class="form-control" name="owner">
+          </div>
+          <div class="form-group">
+            <label for="name" class="col-form-label">pet name :</label>
+            <input type="text" class="form-control" name="name">
+          </div>
+          <div class="form-group">
+            <label for="type" class="col-form-label">type :</label>
+            <input type="number" class="form-control" name="type">
+          </div>
+          <div class="form-group">
+            <label for="desc" class="col-form-label">description :</label>
+            <input type="text" class="form-control" name="desc">
+          </div>
+          <div class="form-group">
+            <label for="phone" class="col-form-label">phone :</label>
+            <input type="number" class="form-control" name="phone">
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             <button type="submit" class="btn btn-primary" name="edit" value="complete">Update</button>
-            <input type="hidden" name="id" value="<?php echo $adopt['ID'];?>">
+            <input type="hidden" name="id" value="<?php echo $clinic['ID'];?>">
           </div>
         </form>
-              
-              
-           
-            <form action="adopt_del.php" method="get"> 
-              <button type="submit" class="btn btn-danger" name="delete">Delete</button> 
-              <input type="hidden" name="id" value="<?php echo $adopt['ID'];?>">
-            </form>
-
-          </td></tr>
-<?php
-                                
-           } }
-?>
-
+                                </td>
+                            </tr>
+                        <?php
+                        }
+                        ?>
 <script>
     if ( window.history.replaceState ) {
         window.history.replaceState( null, null, window.location.href );
